@@ -253,7 +253,7 @@ def main():
     circles_info = []
     for i, base_url in enumerate(
         [
-            "https://web.archive.org/web/20141024075725/http://reitaisai.com/arts1/circlelist/block/",
+            "https://web.archive.org/web/20251114105029/https://reitaisai.com/arts7/%E3%80%90%E9%85%8D%E7%BD%AE%E7%95%AA%E5%8F%B7%E9%A0%86%E3%80%91%E3%82%B5%E3%83%BC%E3%82%AF%E3%83%AB%E9%85%8D%E7%BD%AE/",
         ]
     ):
         official_soup = retrieve_soup_fetch_if_needed(
@@ -305,7 +305,7 @@ def main():
             official_name_index.setdefault(key, []).append(index)
 
     secondary_links = [
-        "https://thwiki.cc/%E5%8D%9A%E4%B8%BD%E7%A5%9E%E7%A4%BE%E7%A7%8B%E5%AD%A3%E4%BE%8B%E5%A4%A7%E7%A5%AD/%E7%AC%AC1%E5%B1%8A%E6%91%8A%E4%BD%8D",
+        "https://thwiki.cc/%E5%8D%9A%E4%B8%BD%E7%A5%9E%E7%A4%BE%E7%A7%8B%E5%AD%A3%E4%BE%8B%E5%A4%A7%E7%A5%AD/%E7%AC%AC7%E5%B1%8A%E6%91%8A%E4%BD%8D",
     ]
     secondary_match_count = 0
     for secondary_index, secondary_url in enumerate(secondary_links):

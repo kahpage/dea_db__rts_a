@@ -67,50 +67,805 @@ def retrieve_circles(event_name: str) -> list[Circle]:
 
 if __name__ == "__main__":
     events: list[Event] = []
-    # active_events: list[int | str] = list(range(1, 14 + 1))
+    disabled_events: list[int | str] = []
 
-    i =   # ====  ====
-    if i in active_events:
-        # event_name = f"{i}"
+    thwikicc = "https://thwiki.cc/%E5%8D%9A%E4%B8%BD%E7%A5%9E%E7%A4%BE%E7%A7%8B%E5%AD%A3%E4%BE%8B%E5%A4%A7%E7%A5%AD"
+
+    i = 1  # ==== rts_a1 ====
+    if i not in disabled_events:
+        event_name = f"rts_a{i}"
         print(f"Processing {event_name} ...")
 
+        thwikicc_arts1 = "https://thwiki.cc/%E5%8D%9A%E4%B8%BD%E7%A5%9E%E7%A4%BE%E7%A7%8B%E5%AD%A3%E4%BE%8B%E5%A4%A7%E7%A5%AD/%E7%AC%AC1%E5%B1%8A%E6%91%8A%E4%BD%8D"
+
         media_ = [
+            Medium(
+                "01_arts1.jpg",
+                [Source(thwikicc, (ReliabilityTypes.Likely, OriginTypes.External))],
+            ),
+            Medium(
+                "01_copy-web_arts1.jpg",
+                [
+                    Source(
+                        "https://web.archive.org/web/20141024075716/http://reitaisai.com/arts1/circlelist/",
+                        (RT.Reliable, OT.Official),
+                    )
+                ],
+            ),
             # Medium("", [Source("", (RT.Reliable, OT.Official))]),
         ]
         locations = [
-            # Location(
-            #     coordinates=(,),
-            #     address="",
-            #     description="",
-            #     sources=[Source("", (ReliabilityTypes.Reliable, OriginTypes.Official))],
-            #     # comments=None,
-            #     imageUrl="",
-            #     url="",
-            # ),  
+            Location(
+                coordinates=(35.6284445, 139.7926734),
+                address="3 Chome-11-1 Ariake, Koto City, Tokyo 135-0063, Japan",
+                description="東京ビッグサイト東ホール",
+                sources=[
+                    Source(
+                        thwikicc_arts1,
+                        (ReliabilityTypes.Likely, OriginTypes.External),
+                    )
+                ],
+                # comments=None,
+                imageUrl="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmniRNV84lzB1SNXuy60c0lznxgbqmNtYyJ8rkHQXk9u4qwSBeDafMEeWY7SaHOPcgw9m9BObYv4SvxJATFOtwEErABiE-oZjeBkl96ni8hTFClnpIJNnLLpRCBg6Ue9K__BWAAVQ=s0?imgmax=0",
+                url="https://maps.app.goo.gl/6EYu64eY7PRhWRxu7",
+            ),
         ]
         event = Event(
-            aliases=[f"{i}"],
-            dates="",
+            aliases=[
+                "秋季例大祭1",
+                "博麗神社秋季例大祭1",
+                "Hakurei Jinja Shuuki Reitaisai 1",
+                "Autumn Reitaisai 1",
+                "ARTS1",
+                "第一回 博麗神社秋季例大祭",
+            ],
+            dates="2014.11.24",
             circles=[],
             media=media_,
             sources=[
-                # Source(f"Date: {}", (RT.Reliable, OT.Official)),
-                # Source("Participating circles: ", (RT.Reliable, OT.Official)),
+                Source(
+                    "Date: https://web.archive.org/web/20141024075725/http://reitaisai.com/arts1/circlelist/block/",
+                    (ReliabilityTypes.Reliable, OriginTypes.Official),
+                ),
+                Source(
+                    "Participating circles (1): https://web.archive.org/web/20141024075716/http://reitaisai.com/arts1/circlelist/",
+                    (ReliabilityTypes.Reliable, OriginTypes.Official),
+                ),
+                Source(
+                    f"Participating circles (2): {thwikicc_arts1} (well sourced)",
+                    (ReliabilityTypes.Likely, OriginTypes.External),
+                ),
             ],
             locations=locations,
             description=None,
             # comments=None,
-            # last_edited="",
+            last_edited="2026.09.30",
         )
 
         # Retrieve circles
-        # event.circles = retrieve_circles(event_name)
+        event.circles = retrieve_circles(event_name)
         events.append(event)
+
+    i = 2  # ==== rts_a2 ====
+    if i not in disabled_events:
+        event_name = f"rts_a{i}"
+        print(f"Processing {event_name} ...")
+        thwikicc_arts2 = "https://thwiki.cc/%E5%8D%9A%E4%B8%BD%E7%A5%9E%E7%A4%BE%E7%A7%8B%E5%AD%A3%E4%BE%8B%E5%A4%A7%E7%A5%AD/%E7%AC%AC2%E5%B1%8A%E6%91%8A%E4%BD%8D"
+
+        media_ = [
+            Medium(
+                "02_a7ebdb67e824fa07619173061887136a.png",
+                [
+                    Source(
+                        "https://web.archive.org/web/20151020131043/http://reitaisai.com/arts2/",
+                        (ReliabilityTypes.Reliable, OriginTypes.Official),
+                    )
+                ],
+            ),
+            # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+            # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+        ]
+        locations = [
+            Location(
+                coordinates=(35.6284445, 139.7926734),
+                address="3 Chome-11-1 Ariake, Koto City, Tokyo 135-0063, Japan",
+                description="東京ビッグサイト東ホール",
+                sources=[
+                    Source(
+                        "https://web.archive.org/web/20151020062424/http://reitaisai.com/arts2",
+                        (ReliabilityTypes.Reliable, OriginTypes.Official),
+                    )
+                ],
+                # comments=None,
+                imageUrl="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmniRNV84lzB1SNXuy60c0lznxgbqmNtYyJ8rkHQXk9u4qwSBeDafMEeWY7SaHOPcgw9m9BObYv4SvxJATFOtwEErABiE-oZjeBkl96ni8hTFClnpIJNnLLpRCBg6Ue9K__BWAAVQ=s0?imgmax=0",
+                url="https://maps.app.goo.gl/6EYu64eY7PRhWRxu7",
+            ),
+        ]
+        event = Event(
+            aliases=[
+                f"秋季例大祭{i}",
+                f"博麗神社秋季例大祭{i}",
+                f"Hakurei Jinja Shuuki Reitaisai {i}",
+                f"Autumn Reitaisai {i}",
+                f"ARTS{i}",
+                "第二回 博麗神社秋季例大祭",
+            ],
+            dates="2015.10.18",
+            circles=[],
+            media=media_,
+            sources=[
+                Source(
+                    "Date: https://web.archive.org/web/20151020062424/http://reitaisai.com/arts2",
+                    (ReliabilityTypes.Reliable, OriginTypes.Official),
+                ),
+                Source(
+                    "Participating circles (1): https://web.archive.org/web/20151017083305/http://reitaisai.com/arts2/circlelist-haichi",
+                    (ReliabilityTypes.Reliable, OriginTypes.Official),
+                ),
+                Source(
+                    f"Participating circles (2): {thwikicc_arts2} (well sourced)",
+                    (ReliabilityTypes.Reliable, OriginTypes.External),
+                ),
+            ],
+            locations=locations,
+            description=None,
+            # comments=None,
+            last_edited="2026.09.30",
+        )
+
+        # Retrieve circles
+        event.circles = retrieve_circles(event_name)
+        events.append(event)
+
+    i = 3  # ==== rts_a3 ====
+    if i not in disabled_events:
+        event_name = f"rts_a{i}"
+        print(f"Processing {event_name} ...")
+        thwikicc_arts3 = "https://thwiki.cc/%E5%8D%9A%E4%B8%BD%E7%A5%9E%E7%A4%BE%E7%A7%8B%E5%AD%A3%E4%BE%8B%E5%A4%A7%E7%A5%AD/%E7%AC%AC3%E5%B1%8A%E6%91%8A%E4%BD%8D"
+
+        media_ = [
+            Medium(
+                "03_arts3.jpg",
+                [Source(thwikicc, (ReliabilityTypes.Likely, OriginTypes.External))],
+            ),
+            Medium(
+                "03_46259336d607ed2221ac25c4a129300f.jpg",
+                [
+                    Source(
+                        "https://web.archive.org/web/20161111135729/http://reitaisai.com/arts3/685",
+                        (RT.Reliable, OT.Official),
+                    )
+                ],
+            ),
+            # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+            # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+        ]
+        locations = [
+            Location(
+                coordinates=(35.6284445, 139.7926734),
+                address="3 Chome-11-1 Ariake, Koto City, Tokyo 135-0063, Japan",
+                description="東京ビッグサイト東1・2・3ホール",
+                sources=[
+                    Source(
+                        "https://web.archive.org/web/20151020062424/http://reitaisai.com/arts2",
+                        (ReliabilityTypes.Reliable, OriginTypes.Official),
+                    )
+                ],
+                # comments=None,
+                imageUrl="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmniRNV84lzB1SNXuy60c0lznxgbqmNtYyJ8rkHQXk9u4qwSBeDafMEeWY7SaHOPcgw9m9BObYv4SvxJATFOtwEErABiE-oZjeBkl96ni8hTFClnpIJNnLLpRCBg6Ue9K__BWAAVQ=s0?imgmax=0",
+                url="https://maps.app.goo.gl/6EYu64eY7PRhWRxu7",
+            ),
+        ]
+        event = Event(
+            aliases=[
+                f"秋季例大祭{i}",
+                f"博麗神社秋季例大祭{i}",
+                f"Hakurei Jinja Shuuki Reitaisai {i}",
+                f"Autumn Reitaisai {i}",
+                f"ARTS{i}",
+                "第三回 博麗神社秋季例大祭",
+            ],
+            dates="2016.10.16",
+            circles=[],
+            media=media_,
+            sources=[
+                Source(
+                    "Date: https://web.archive.org/web/20161111135729/http://reitaisai.com/arts3/685",
+                    (RT.Reliable, OT.Official),
+                ),
+                Source(
+                    "Participating circles (1): https://web.archive.org/web/20230801072415/http://s.reitaisai.com/arts3/block123/",
+                    (ReliabilityTypes.Reliable, OriginTypes.Official),
+                ),
+                Source(
+                    f"Participating circles (2): {thwikicc_arts3} (well sourced)",
+                    (ReliabilityTypes.Reliable, OriginTypes.External),
+                ),
+            ],
+            locations=locations,
+            description=None,
+            # comments=None,
+            last_edited="2026.09.30",
+        )
+
+        # Retrieve circles
+        event.circles = retrieve_circles(event_name)
+        events.append(event)
+
+    i = 4  # ==== rts_a4 ====
+    if i not in disabled_events:
+        event_name = f"rts_a{i}"
+        print(f"Processing {event_name} ...")
+        thwikicc_arts4 = "https://thwiki.cc/%E5%8D%9A%E4%B8%BD%E7%A5%9E%E7%A4%BE%E7%A7%8B%E5%AD%A3%E4%BE%8B%E5%A4%A7%E7%A5%AD/%E7%AC%AC4%E5%B1%8A%E6%91%8A%E4%BD%8D"
+
+        media_ = [
+            Medium(
+                "04_arts4.jpg",
+                [Source(thwikicc, (ReliabilityTypes.Likely, OriginTypes.External))],
+            ),
+            # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+            # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+            # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+        ]
+        locations = [
+            Location(
+                coordinates=(35.6284445, 139.7926734),
+                address="3 Chome-11-1 Ariake, Koto City, Tokyo 135-0063, Japan",
+                description="東京ビッグサイト東ホール",
+                sources=[
+                    Source(
+                        "https://web.archive.org/web/20170910145450/http://reitaisai.com/arts4/reitaisai_kaisaijouhou/",
+                        (ReliabilityTypes.Reliable, OriginTypes.Official),
+                    )
+                ],
+                # comments=None,
+                imageUrl="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmniRNV84lzB1SNXuy60c0lznxgbqmNtYyJ8rkHQXk9u4qwSBeDafMEeWY7SaHOPcgw9m9BObYv4SvxJATFOtwEErABiE-oZjeBkl96ni8hTFClnpIJNnLLpRCBg6Ue9K__BWAAVQ=s0?imgmax=0",
+                url="https://maps.app.goo.gl/6EYu64eY7PRhWRxu7",
+            ),
+        ]
+        event = Event(
+            aliases=[
+                f"秋季例大祭{i}",
+                f"博麗神社秋季例大祭{i}",
+                f"Hakurei Jinja Shuuki Reitaisai {i}",
+                f"Autumn Reitaisai {i}",
+                f"ARTS{i}",
+                "第四回 博麗神社秋季例大祭",
+            ],
+            dates="2017.10.15",
+            circles=[],
+            media=media_,
+            sources=[
+                Source(
+                    "Date: https://web.archive.org/web/20170910145450/http://reitaisai.com/arts4/reitaisai_kaisaijouhou/",
+                    (ReliabilityTypes.Reliable, OriginTypes.Official),
+                ),
+                Source(
+                    "Participating circles (1): https://web.archive.org/web/20230801040646/http://s.reitaisai.com/arts4/block/",
+                    (ReliabilityTypes.Reliable, OriginTypes.Official),
+                ),
+                Source(
+                    f"Participating circles (2): {thwikicc_arts4} (well sourced)",
+                    (ReliabilityTypes.Reliable, OriginTypes.External),
+                ),
+            ],
+            locations=locations,
+            description=None,
+            # comments=None,
+            last_edited="2026.10.01",
+        )
+
+        # Retrieve circles
+        event.circles = retrieve_circles(event_name)
+        events.append(event)
+
+    i = 5  # ==== rts_a5 ====
+    if i not in disabled_events:
+        event_name = f"rts_a{i}"
+        print(f"Processing {event_name} ...")
+        thwikicc_arts5 = "https://thwiki.cc/%E5%8D%9A%E4%B8%BD%E7%A5%9E%E7%A4%BE%E7%A7%8B%E5%AD%A3%E4%BE%8B%E5%A4%A7%E7%A5%AD/%E7%AC%AC5%E5%B1%8A%E6%91%8A%E4%BD%8D"
+
+        media_ = [
+            Medium(
+                "05_arts5.jpg",
+                [Source(thwikicc, (ReliabilityTypes.Likely, OriginTypes.External))],
+            ),
+            Medium(
+                "05_arts5_top.png",
+                [
+                    Source(
+                        "https://web.archive.org/web/20180602071006/http://reitaisai.com/arts5",
+                        (RT.Reliable, OT.Official),
+                    )
+                ],
+            ),
+            # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+            # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+        ]
+        locations = [
+            Location(
+                coordinates=(35.6284445, 139.7926734),
+                address="3 Chome-11-1 Ariake, Koto City, Tokyo 135-0063, Japan",
+                description="東京ビッグサイト東ホール",
+                sources=[
+                    Source(
+                        "https://web.archive.org/web/20180602071006/http://reitaisai.com/arts5",
+                        (ReliabilityTypes.Reliable, OriginTypes.Official),
+                    )
+                ],
+                # comments=None,
+                imageUrl="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmniRNV84lzB1SNXuy60c0lznxgbqmNtYyJ8rkHQXk9u4qwSBeDafMEeWY7SaHOPcgw9m9BObYv4SvxJATFOtwEErABiE-oZjeBkl96ni8hTFClnpIJNnLLpRCBg6Ue9K__BWAAVQ=s0?imgmax=0",
+                url="https://maps.app.goo.gl/6EYu64eY7PRhWRxu7",
+            ),
+        ]
+        event = Event(
+            aliases=[
+                f"秋季例大祭{i}",
+                f"博麗神社秋季例大祭{i}",
+                f"Hakurei Jinja Shuuki Reitaisai {i}",
+                f"Autumn Reitaisai {i}",
+                f"ARTS{i}",
+                "第五回 博麗神社秋季例大祭",
+            ],
+            dates="2018.10.14",
+            circles=[],
+            media=media_,
+            sources=[
+                Source(
+                    "Date: https://web.archive.org/web/20180602071006/http://reitaisai.com/arts5",
+                    (RT.Reliable, OT.Official),
+                ),
+                Source(
+                    "Participating circles (1): https://web.archive.org/web/20190918092605/https://reitaisai.com/arts5/?page_id=307",
+                    (ReliabilityTypes.Reliable, OriginTypes.Official),
+                ),
+                Source(
+                    f"Participating circles (2): {thwikicc_arts5} (well sourced)",
+                    (ReliabilityTypes.Reliable, OriginTypes.External),
+                ),
+            ],
+            locations=locations,
+            description=None,
+            # comments=None,
+            last_edited="2026.10.01",
+        )
+
+        # Retrieve circles
+        event.circles = retrieve_circles(event_name)
+        events.append(event)
+
+    i = 6  # ==== rts_a6 ====
+    if i not in disabled_events:
+        event_name = f"rts_a{i}"
+        print(f"Processing {event_name} ...")
+        thwikicc_arts6 = "https://thwiki.cc/%E5%8D%9A%E4%B8%BD%E7%A5%9E%E7%A4%BE%E7%A7%8B%E5%AD%A3%E4%BE%8B%E5%A4%A7%E7%A5%AD/%E7%AC%AC6%E5%B1%8A%E6%91%8A%E4%BD%8D"
+
+        media_ = [
+            Medium(
+                "06_arts6.jpg",
+                [Source(thwikicc, (ReliabilityTypes.Likely, OriginTypes.External))],
+            ),
+            Medium(
+                "06_6b580cbb5c3fc11d24545d595f8e595f-1.jpg",
+                [
+                    Source(
+                        "https://web.archive.org/web/20190930144340/https://reitaisai.com/arts6/",
+                        (RT.Reliable, OT.Official),
+                    )
+                ],
+            ),
+            # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+            # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+        ]
+        locations = [
+            Location(
+                coordinates=(35.6284445, 139.7926734),
+                address="3 Chome-11-1 Ariake, Koto City, Tokyo 135-0063, Japan",
+                description="東京ビッグサイト 西ホール",
+                sources=[
+                    Source(
+                        "https://web.archive.org/web/20190930144340/https://reitaisai.com/arts6/",
+                        (ReliabilityTypes.Reliable, OriginTypes.Official),
+                    )
+                ],
+                # comments=None,
+                imageUrl="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmniRNV84lzB1SNXuy60c0lznxgbqmNtYyJ8rkHQXk9u4qwSBeDafMEeWY7SaHOPcgw9m9BObYv4SvxJATFOtwEErABiE-oZjeBkl96ni8hTFClnpIJNnLLpRCBg6Ue9K__BWAAVQ=s0?imgmax=0",
+                url="https://maps.app.goo.gl/6EYu64eY7PRhWRxu7",
+            ),
+        ]
+        event = Event(
+            aliases=[
+                f"秋季例大祭{i}",
+                f"博麗神社秋季例大祭{i}",
+                f"Hakurei Jinja Shuuki Reitaisai {i}",
+                f"Autumn Reitaisai {i}",
+                f"ARTS{i}",
+                "第六回 博麗神社秋季例大祭",
+            ],
+            dates="2019.10.06",
+            circles=[],
+            media=media_,
+            sources=[
+                Source(
+                    "Date: https://web.archive.org/web/20190930144340/https://reitaisai.com/arts6/",
+                    (ReliabilityTypes.Likely, OriginTypes.External),
+                ),
+                Source(
+                    "Participating circles (1): https://web.archive.org/web/20251016125327/http://s.reitaisai.com/arts6/",
+                    (ReliabilityTypes.Reliable, OriginTypes.Official),
+                ),
+                Source(
+                    f"Participating circles (2): {thwikicc_arts6} (well sourced)",
+                    (ReliabilityTypes.Reliable, OriginTypes.External),
+                ),
+            ],
+            locations=locations,
+            description=None,
+            # comments=None,
+            last_edited="2026.10.01",
+        )
+
+        # Retrieve circles
+        event.circles = retrieve_circles(event_name)
+        events.append(event)
+
+    i = 7  # ==== rts_a7 ====
+    if i not in disabled_events:
+        event_name = f"rts_a{i}"
+        print(f"Processing {event_name} ...")
+        thwikicc_arts7 = "https://thwiki.cc/%E5%8D%9A%E4%B8%BD%E7%A5%9E%E7%A4%BE%E7%A7%8B%E5%AD%A3%E4%BE%8B%E5%A4%A7%E7%A5%AD/%E7%AC%AC7%E5%B1%8A%E6%91%8A%E4%BD%8D"
+
+        media_ = [
+            Medium(
+                "07_arts7.jpg",
+                [Source(thwikicc, (ReliabilityTypes.Likely, OriginTypes.External))],
+            ),
+            Medium(
+                "07_fb8f87a90080e46dedb9c588ee75142e.jpg",
+                [
+                    Source(
+                        "https://web.archive.org/web/20200629123900/https://reitaisai.com/arts7/",
+                        (RT.Reliable, OT.Official),
+                    )
+                ],
+            ),
+            Medium(
+                "07_fdc236847103a636ee8c144024c094c7.jpg",
+                [
+                    Source(
+                        "https://web.archive.org/web/20201101131725/https://reitaisai.com/arts7/",
+                        (RT.Reliable, OT.Official),
+                    )
+                ],
+            ),
+            # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+        ]
+        locations = [
+            Location(
+                coordinates=(35.6284445, 139.7926734),
+                address="3 Chome-11-1 Ariake, Koto City, Tokyo 135-0063, Japan",
+                description="東京ビッグサイト 西ホール",
+                sources=[
+                    Source(
+                        "https://web.archive.org/web/20201101131725/https://reitaisai.com/arts7/",
+                        (ReliabilityTypes.Reliable, OriginTypes.Official),
+                    )
+                ],
+                # comments=None,
+                imageUrl="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmniRNV84lzB1SNXuy60c0lznxgbqmNtYyJ8rkHQXk9u4qwSBeDafMEeWY7SaHOPcgw9m9BObYv4SvxJATFOtwEErABiE-oZjeBkl96ni8hTFClnpIJNnLLpRCBg6Ue9K__BWAAVQ=s0?imgmax=0",
+                url="https://maps.app.goo.gl/6EYu64eY7PRhWRxu7",
+            ),
+        ]
+        event = Event(
+            aliases=[
+                f"秋季例大祭{i}",
+                f"博麗神社秋季例大祭{i}",
+                f"Hakurei Jinja Shuuki Reitaisai {i}",
+                f"Autumn Reitaisai {i}",
+                f"ARTS{i}",
+                "第七回 博麗神社秋季例大祭",
+            ],
+            dates="2020.10.18",
+            circles=[],
+            media=media_,
+            sources=[
+                Source(
+                    "Date: https://web.archive.org/web/20200629135459/https://reitaisai.com/arts7/?p=87",
+                    (ReliabilityTypes.Reliable, OriginTypes.Official),
+                ),
+                Source(
+                    "Participating circles (1): https://web.archive.org/web/20251114105029/https://reitaisai.com/arts7/%E3%80%90%E9%85%8D%E7%BD%AE%E7%95%AA%E5%8F%B7%E9%A0%86%E3%80%91%E3%82%B5%E3%83%BC%E3%82%AF%E3%83%AB%E9%85%8D%E7%BD%AE/",
+                    (ReliabilityTypes.Reliable, OriginTypes.Official),
+                ),
+                Source(
+                    f"Participating circles (2): {thwikicc_arts7} (well sourced)",
+                    (ReliabilityTypes.Reliable, OriginTypes.External),
+                ),
+            ],
+            locations=locations,
+            description=None,
+            # comments=None,
+            last_edited="2026.10.01",
+        )
+
+        # Retrieve circles
+        event.circles = retrieve_circles(event_name)
+        events.append(event)
+
+    i = 8  # ==== rts_a8 ====
+    if i not in disabled_events:
+        event_name = f"rts_a{i}"
+        print(f"Processing {event_name} ...")
+        thwikicc_arts8 = "https://thwiki.cc/%E5%8D%9A%E4%B8%BD%E7%A5%9E%E7%A4%BE%E7%A7%8B%E5%AD%A3%E4%BE%8B%E5%A4%A7%E7%A5%AD/%E7%AC%AC8%E5%B1%8A%E6%91%8A%E4%BD%8D"
+
+        media_ = [
+            Medium(
+                "08_arts8.jpg",
+                [Source(thwikicc, (ReliabilityTypes.Likely, OriginTypes.External))],
+            ),
+            Medium(
+                "08_e4d67c444a24c5db518c592a05660c6a.png",
+                [
+                    Source(
+                        "https://web.archive.org/web/20211026074828/https://reitaisai.com/arts8/",
+                        (RT.Reliable, OT.Official),
+                    )
+                ],
+            ),
+            # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+            # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+        ]
+        locations = [
+            Location(
+                coordinates=(35.6284445, 139.7926734),
+                address="3 Chome-11-1 Ariake, Koto City, Tokyo 135-0063, Japan",
+                description="東京ビッグサイト青海展示棟",
+                sources=[
+                    Source(
+                        "https://web.archive.org/web/20211026074828/https://reitaisai.com/arts8/",
+                        (ReliabilityTypes.Reliable, OriginTypes.Official),
+                    )
+                ],
+                # comments=None,
+                imageUrl="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmniRNV84lzB1SNXuy60c0lznxgbqmNtYyJ8rkHQXk9u4qwSBeDafMEeWY7SaHOPcgw9m9BObYv4SvxJATFOtwEErABiE-oZjeBkl96ni8hTFClnpIJNnLLpRCBg6Ue9K__BWAAVQ=s0?imgmax=0",
+                url="https://maps.app.goo.gl/6EYu64eY7PRhWRxu7",
+            ),
+        ]
+        event = Event(
+            aliases=[
+                f"秋季例大祭{i}",
+                f"博麗神社秋季例大祭{i}",
+                f"Hakurei Jinja Shuuki Reitaisai {i}",
+                f"Autumn Reitaisai {i}",
+                f"ARTS{i}",
+                "第八回 博麗神社秋季例大祭",
+            ],
+            dates="2021.10.24",
+            circles=[],
+            media=media_,
+            sources=[
+                Source(
+                    "Date: https://web.archive.org/web/20211026074828/https://reitaisai.com/arts8/",
+                    (ReliabilityTypes.Reliable, OriginTypes.Official),
+                ),
+                Source(
+                    "Participating circles (1): https://web.archive.org/web/20251020190006/https://reitaisai.com/arts8/circlelist_1/",
+                    (ReliabilityTypes.Reliable, OriginTypes.Official),
+                ),
+                Source(
+                    f"Participating circles (2): {thwikicc_arts8} (well sourced)",
+                    (ReliabilityTypes.Reliable, OriginTypes.External),
+                ),
+            ],
+            locations=locations,
+            description=None,
+            # comments=None,
+            last_edited="2026.10.01",
+        )
+
+        # Retrieve circles
+        event.circles = retrieve_circles(event_name)
+        events.append(event)
+
+    # i =  # ==== rts_a ====
+    # if i not in disabled_events:
+    #     event_name = f"rts_a{i}"
+    #     print(f"Processing {event_name} ...")
+
+    #     media_ = [
+    #         # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+    #         # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+    #         # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+    #     ]
+    #     locations = [
+    #         # Location(
+    #         #     coordinates=(,),
+    #         #     address="",
+    #         #     description="",
+    #         #     sources=[Source("", (ReliabilityTypes.Reliable, OriginTypes.Official))],
+    #         #     # comments=None,
+    #         #     imageUrl="",
+    #         #     url="",
+    #         # ),
+    #     ]
+    #     event = Event(
+    #         aliases=[
+    #             f"秋季例大祭{i}",
+    #             f"博麗神社秋季例大祭{i}",
+    #             f"Hakurei Jinja Shuuki Reitaisai {i}",
+    #             f"Autumn Reitaisai {i}",
+    #             f"ARTS{i}",
+    #             @@
+    #         ],
+    #         dates="",
+    #         circles=[],
+    #         media=media_,
+    #         sources=[
+    #             # Source("Date: ", (RT.Reliable, OT.Official)),
+    #             # Source("Participating circles: ", (RT.Reliable, OT.Official)),
+    #         ],
+    #         locations=locations,
+    #         description=None,
+    #         # comments=None,
+    #         last_edited="2026.10.01",
+    #     )
+
+    #     # Retrieve circles
+    #     # event.circles = retrieve_circles(event_name)
+    #     events.append(event)
+
+    # i =  # ==== rts_a ====
+    # if i not in disabled_events:
+    #     event_name = f"rts_a{i}"
+    #     print(f"Processing {event_name} ...")
+
+    #     media_ = [
+    #         # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+    #         # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+    #         # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+    #     ]
+    #     locations = [
+    #         # Location(
+    #         #     coordinates=(,),
+    #         #     address="",
+    #         #     description="",
+    #         #     sources=[Source("", (ReliabilityTypes.Reliable, OriginTypes.Official))],
+    #         #     # comments=None,
+    #         #     imageUrl="",
+    #         #     url="",
+    #         # ),
+    #     ]
+    #     event = Event(
+    #         aliases=[
+    #             f"秋季例大祭{i}",
+    #             f"博麗神社秋季例大祭{i}",
+    #             f"Hakurei Jinja Shuuki Reitaisai {i}",
+    #             f"Autumn Reitaisai {i}",
+    #             f"ARTS{i}",
+    #             @@
+    #         ],
+    #         dates="",
+    #         circles=[],
+    #         media=media_,
+    #         sources=[
+    #             # Source("Date: ", (RT.Reliable, OT.Official)),
+    #             # Source("Participating circles: ", (RT.Reliable, OT.Official)),
+    #         ],
+    #         locations=locations,
+    #         description=None,
+    #         # comments=None,
+    #         last_edited="2026.10.01",
+    #     )
+
+    #     # Retrieve circles
+    #     # event.circles = retrieve_circles(event_name)
+    #     events.append(event)
+
+    # i =  # ==== rts_a ====
+    # if i not in disabled_events:
+    #     event_name = f"rts_a{i}"
+    #     print(f"Processing {event_name} ...")
+
+    #     media_ = [
+    #         # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+    #         # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+    #         # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+    #     ]
+    #     locations = [
+    #         # Location(
+    #         #     coordinates=(,),
+    #         #     address="",
+    #         #     description="",
+    #         #     sources=[Source("", (ReliabilityTypes.Reliable, OriginTypes.Official))],
+    #         #     # comments=None,
+    #         #     imageUrl="",
+    #         #     url="",
+    #         # ),
+    #     ]
+    #     event = Event(
+    #         aliases=[
+    #             f"秋季例大祭{i}",
+    #             f"博麗神社秋季例大祭{i}",
+    #             f"Hakurei Jinja Shuuki Reitaisai {i}",
+    #             f"Autumn Reitaisai {i}",
+    #             f"ARTS{i}",
+    #             @@
+    #         ],
+    #         dates="",
+    #         circles=[],
+    #         media=media_,
+    #         sources=[
+    #             # Source("Date: ", (RT.Reliable, OT.Official)),
+    #             # Source("Participating circles: ", (RT.Reliable, OT.Official)),
+    #         ],
+    #         locations=locations,
+    #         description=None,
+    #         # comments=None,
+    #         last_edited="2026.10.01",
+    #     )
+
+    #     # Retrieve circles
+    #     # event.circles = retrieve_circles(event_name)
+    #     events.append(event)
+
+    # i =  # ==== rts_a ====
+    # if i not in disabled_events:
+    #     event_name = f"rts_a{i}"
+    #     print(f"Processing {event_name} ...")
+
+    #     media_ = [
+    #         # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+    #         # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+    #         # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+    #     ]
+    #     locations = [
+    #         # Location(
+    #         #     coordinates=(,),
+    #         #     address="",
+    #         #     description="",
+    #         #     sources=[Source("", (ReliabilityTypes.Reliable, OriginTypes.Official))],
+    #         #     # comments=None,
+    #         #     imageUrl="",
+    #         #     url="",
+    #         # ),
+    #     ]
+    #     event = Event(
+    #         aliases=[
+    #             f"秋季例大祭{i}",
+    #             f"博麗神社秋季例大祭{i}",
+    #             f"Hakurei Jinja Shuuki Reitaisai {i}",
+    #             f"Autumn Reitaisai {i}",
+    #             f"ARTS{i}",
+    #             @@
+    #         ],
+    #         dates="",
+    #         circles=[],
+    #         media=media_,
+    #         sources=[
+    #             # Source("Date: ", (RT.Reliable, OT.Official)),
+    #             # Source("Participating circles: ", (RT.Reliable, OT.Official)),
+    #         ],
+    #         locations=locations,
+    #         description=None,
+    #         # comments=None,
+    #         last_edited="2026.10.01",
+    #     )
+
+    #     # Retrieve circles
+    #     # event.circles = retrieve_circles(event_name)
+    #     events.append(event)
 
     # ==== event group ====
     media = [
-        # Medium("",
-        #        [Source("", (RT.Reliable, OT.Official))]),
+        Medium(
+            "eg_20161007055000_logo.png",
+            [
+                Source(
+                    "https://web.archive.org/web/20161007055000/http://reitaisai.com/arts3/setsuei",
+                    (RT.Reliable, OT.Official),
+                )
+            ],
+        ),
         # Medium("",
         #        [Source("", (RT.Reliable, OT.Official))]),
     ]
@@ -133,7 +888,7 @@ if __name__ == "__main__":
         ],
         comments=None,
         description=None,
-        # last_edited="",
+        last_edited="2026.10.01",
     )
 
     print(f"Saving {Path(__file__).stem} database...")
